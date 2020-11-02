@@ -15,6 +15,15 @@ const displayTurnsLeft = document.getElementById("display-turns-left");
 let secretNumber;
 let turnsLeft = 5;
 
+const clearBoard = () => {
+  minNum.value = "";
+  maxNum.value = "";
+  guess.value = "";
+  displayResponse.innerHTML = "";
+  displayRange.innerHTML = "";
+  displayTurnsLeft.innerHTML = "";
+};
+
 const setUpBoard = () => {
   displayRange.innerHTML = `Min: ${minNum.value} Max:${maxNum.value}`;
   displayTurnsLeft.innerHTML = `Turns Left: ${turnsLeft}`;
@@ -46,14 +55,24 @@ const handleTurnDisplay = () => {
   guess.value = "";
 };
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  document.addEventListener("input", (event) => {
+const handleTurn = () => {
+  if (turnsLeft) {
+    guessChecker();
+    handleTurnDisplay();
+  } else {
+    guessSubmitButton.disabled = true;
+    displayResponse.innerHTML = "You fail! Try harder next time 😝";
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("input", () => {
     if (minNum.value !== "" && maxNum.value !== "") {
       rangeSubmitButton.disabled = false;
     }
   });
 
-  rangeSubmitButton.addEventListener("click", (event) => {
+  rangeSubmitButton.addEventListener("click", () => {
     secretNumber = math.randomInRange(
       Number(minNum.value),
       Number(maxNum.value)
@@ -61,22 +80,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     setUpBoard();
   });
 
-  guessSubmitButton.addEventListener("click", (event) => {
-    if (turnsLeft) {
-      guessChecker();
-      handleTurnDisplay();
-    } else {
-      guessSubmitButton.disabled = true;
-      displayResponse.innerHTML = "You fail! Try harder next time 😝";
-    }
+  guessSubmitButton.addEventListener("click", () => {
+    handleTurn();
   });
 
-  newGameButton.addEventListener("click", (event) => {
-    minNum.value = "";
-    maxNum.value = "";
-    guess.value = "";
-    displayResponse.innerHTML = "";
-    displayRange.innerHTML = "";
-    displayTurnsLeft.innerHTML = "";
+  newGameButton.addEventListener("click", () => {
+    clearBoard();
   });
 });
