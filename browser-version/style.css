@@ -1,5 +1,5 @@
 body {
-  background-color: #93b7be;
+  background-color: #76f9ee;
 }
 
 .container {
@@ -44,6 +44,7 @@ h1 {
   padding: 10px;
   margin-bottom: 20px;
   margin-top: 20px;
+  column-count: 2;
 }
 
 h3 {
@@ -58,4 +59,13 @@ h3 {
 
 .display {
   font-size: larger;
+}
+
+.range-button {
+  text-align: center;
+  margin: auto;
+}
+
+.game-buttons {
+  column-count: 2;
 }
