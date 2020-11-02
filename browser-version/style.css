@@ -68,4 +68,7 @@ h3 {
 
 .game-buttons {
   column-count: 2;
+  width: 30%;
+  padding-top: 10px;
+  margin: auto;
 }
