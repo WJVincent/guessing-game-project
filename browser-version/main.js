@@ -1,17 +1,18 @@
-import * as fns from "./math.js";
+import * as math from "./math.js";
 
 document.addEventListener("DOMContentLoaded", (event) => {
   const guess = document.getElementById("user-guess");
   const minNum = document.getElementById("min-number");
   const maxNum = document.getElementById("max-number");
+
   const newGameButton = document.getElementById("new-game");
-  const rangeSubmitButton = document.getElementById("submit");
+  const rangeSubmitButton = document.getElementById("submit-range");
   const guessSubmitButton = document.getElementById("guess-button");
-  const displayText = document.getElementById("display-text");
+
+  const displayResponse = document.getElementById("display-response");
   const displayRange = document.getElementById("display-range");
   const displayTurnsLeft = document.getElementById("display-turns-left");
-  const minNumLabel = document.getElementById("min-num-label");
-  const maxNumLabel = document.getElementById("max-num-label");
+
   let secretNumber;
   let turnsLeft = 5;
 
@@ -19,44 +20,42 @@ document.addEventListener("DOMContentLoaded", (event) => {
     if (minNum.value !== "" && maxNum.value !== "") {
       rangeSubmitButton.disabled = false;
     }
-    if (guess.value !== "") {
-      guessSubmitButton.disabled = false;
-    }
   });
 
   rangeSubmitButton.addEventListener("click", (event) => {
-    secretNumber = fns.randomInRange(
+    secretNumber = math.randomInRange(
       Number(minNum.value),
       Number(maxNum.value)
     );
     console.log(secretNumber);
     displayRange.innerHTML = `Min: ${minNum.value} Max:${maxNum.value}`;
     rangeSubmitButton.disabled = true;
+
     displayTurnsLeft.innerHTML = `Turns Left: ${turnsLeft}`;
-    maxNumLabel.classList.add.visibility = 'hidden';
-    minNumLabel.classList.add.visibility = 'hidden';
+    guessSubmitButton.disabled = false;
+    newGameButton.disabled = false;
   });
 
   guessSubmitButton.addEventListener("click", (event) => {
     if (turnsLeft) {
-      let currentGuess = fns.checkGuess(Number(guess.value), secretNumber);
+      let currentGuess = math.checkGuess(Number(guess.value), secretNumber);
       turnsLeft--;
       switch (currentGuess) {
         case 2:
-          displayText.innerHTML = "too high!!!!";
+          displayResponse.innerHTML = "too high!!!!";
           break;
         case 1:
-          displayText.innerHTML = "too low....";
+          displayResponse.innerHTML = "too low....";
           break;
         case 0:
-          displayText.innerHTML = "juuuuust right";
+          displayResponse.innerHTML = "juuuuust right";
           break;
       }
       displayTurnsLeft.innerHTML = `Turns Left: ${turnsLeft}`;
       guess.value = "";
     } else {
       guessSubmitButton.disabled = true;
-      displayText.innerHTML = "You fail! Try harder next time 😝";
+      displayResponse.innerHTML = "You fail! Try harder next time 😝";
     }
   });
 
@@ -64,7 +63,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     minNum.value = "";
     maxNum.value = "";
     guess.value = "";
-    displayText.innerHTML = "";
+    displayResponse.innerHTML = "";
     displayRange.innerHTML = "";
     displayTurnsLeft.innerHTML = "";
   });

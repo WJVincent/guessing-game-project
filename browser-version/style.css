@@ -1,0 +1,36 @@
+body {
+  background-color: #93b7be;
+}
+
+.container {
+  background-color: #f1fffa;
+  border-radius: 1pc;
+  width: 75%;
+  margin: auto;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.game-area {
+  background-color: #22aaa1;
+  border-radius: 1pc;
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 500%;
+  background-color: #22aaa1;
+  border-radius: 1pc;
+  width: 75%;
+  margin: auto;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 40px;
+}
