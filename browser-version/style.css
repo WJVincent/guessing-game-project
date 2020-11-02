@@ -1,15 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Architects+Daughter:regular);
 body {
-  background-color: #76f9ee;
+  background-color: #64d6cd;
 }
 
 .container {
-  background-color: #f1fffa;
+  background-color: #e1f5ee;
   border-radius: 1pc;
   width: 75%;
   margin: auto;
   padding: 10px;
   position: relative;
   margin-bottom: 40px;
+  box-shadow: 4px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -22,6 +24,8 @@ h1 {
   padding: 10px;
   margin-bottom: 40px;
   margin-top: 40px;
+  box-shadow: 4px 3px rgba(0, 0, 0, 0.4);
+  font-family: Architects Daughter;
 }
 
 .game-area {
@@ -33,6 +37,7 @@ h1 {
   padding: 10px;
   margin-bottom: 20px;
   margin-top: 20px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
 .setup-area {
@@ -45,6 +50,7 @@ h1 {
   margin-bottom: 20px;
   margin-top: 20px;
   column-count: 2;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
 h3 {
@@ -55,6 +61,7 @@ h3 {
   width: 75%;
   margin: auto;
   padding: 10px;
+  font-family: Architects Daughter;
 }
 
 .display {
