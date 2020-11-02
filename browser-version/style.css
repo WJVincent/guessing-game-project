@@ -55,3 +55,7 @@ h3 {
   margin: auto;
   padding: 10px;
 }
+
+.display {
+  font-size: larger;
+}
