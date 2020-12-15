@@ -1,4 +1,35 @@
 @import url(https://fonts.googleapis.com/css?family=Architects+Daughter:regular);
+
+brightGreenTheme {
+  --green-primary-color: #64d6cd;
+
+  --green-secondary-color: #e1f5ee;
+
+  --green-tertiary-color: #22aaa1;
+
+  --green-quaternary-color: #dedede;
+}
+
+lightTheme {
+  --light-primary-color: #e1f5ee;
+
+  --light-secondary-color: #29bbb1;
+
+  --light-tertiary-color: #c3c5cf;
+
+  --light-quaternary-color: #3c3f49;
+}
+
+darkTheme {
+  --dark-primary-color: #3c3f49;
+
+  --dark-secondary-color: #29bbb1;
+
+  --dark-tertiary-color: #6c6f7c;
+
+  --dark-quaternary-color: #e1f5ee;
+}
+
 body {
   background-color: #64d6cd;
 }
@@ -6,7 +37,7 @@ body {
 .container {
   background-color: #e1f5ee;
   border-radius: 1pc;
-  width: 75%;
+  max-width: 600px;
   margin: auto;
   padding: 10px;
   position: relative;
@@ -19,7 +50,7 @@ h1 {
   font-size: 500%;
   background-color: #22aaa1;
   border-radius: 1pc;
-  width: 75%;
+  max-width: 700px;
   margin: auto;
   padding: 10px;
   margin-bottom: 40px;
@@ -100,7 +131,6 @@ button:hover {
 }
 
 button {
-  border: none;
   cursor: pointer;
   font-size: 15px;
   border-radius: 1pc;
